@@ -1,0 +1,35 @@
+name: LintAndTest
+
+on:
+  pull_request: {}
+
+jobs:
+  PythonLint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.7"
+      - name: Install requirements
+        run: pip install -r requirements-dev.txt
+      - name: Black code style
+        run: black src/ tests/ --check .
+     #  - name: Pytype  TODO
+     #    run: pytype --jobs auto
+      - name: Flake8
+        run: flake8 src/ tests/
+
+  PythonTest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.7"
+      - name: Install requirements
+        run: pip install -r requirements-dev.txt
+      - name: Run the tests
+        run: PYTHONPATH=. pytest tests -s --log-cli-level=INFO

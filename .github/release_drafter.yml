@@ -1,0 +1,14 @@
+template: $CHANGES
+
+categories:
+  - title: ":tada: Features"
+    label: "feature"
+  - title: ":bug: Bug Fixes"
+    label: "bug"
+  - title: ":book: Documentation"
+    label: "documentation"
+  - title: ":construction_worker_man: Internal Improvements"
+    label: "internal-improvement"
+
+exclude-labels:
+  - "skip-changelog"
