@@ -1,6 +1,10 @@
 # HashBeaf
 
-You don't like your git commit hash `dc3fe60`? Or any of your others hashes? With HashBeaf you can easily create hashes with words that you like in it, such as `c0de` or `beaf` (now you also get the name, right?).
+You don't like your git commit hash `dc3fe60`?
+Or any of your others hashes?
+With HashBeaf you can easily create hashes with words that you like in it, such as `c0dec`, `abba` :musical_note:, `cafe` :coffee: or [`deadbeef`](https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_debug_values) :cow:.
+The last one is probably too long to work, so let's try `beaf` as hash instead (now you understand the name - not a typo :wink:).
+
 The way this works is that it computes a commit time based on your previous commit to get the right hash, so do use it with care.
 
 ## Example
