@@ -22,7 +22,7 @@ $ git commit -m "Updated code"
 But before you push, you think, meh, `b1c825b`, I can do better than that.
 Now it is time to run HashBeaf:
 ```bash
-$ python src/hashbeaf/hashbeaf.py c0de
+$ hashbeaf c0de
 [main c0de2c4] Updated code
  Date: Mon Jun 26 20:43:07 2023 +0200
 (...)
@@ -32,14 +32,15 @@ And voila, we have `c0de2c4`, our HashBeaf'ed commit hash!
 
 ## Want to try it yourself?
 
-Clone the repository, navigate to your own git repository, make a commit, and then run either:
+Install it with `pip install hashbeaf`, navigate to your own git repository, make a commit, and then run either:
 ```bash
-python /path/to/hashbeaf/src/hashbeaf/hashbeaf.py
+hashbeaf
 ```
 to use a default list of nice 'words', or something like this for a custom 'word':
 ```bash
-python /path/to/hashbeaf/src/hashbeaf/hashbeaf.py c0de
+hashbeaf c0de
 ```
+See `hashbeaf --help` for more information.
 
 If you think it is too much work to run this after each commit, you can also install a git post-commit hook for your repository.
 Modify `post-commit` to point to the right absolute path (and customize it further as needed), and simple copy it to `your_repo/.git/hooks`.
@@ -66,6 +67,14 @@ HashBeaf keeps on changing the two times until either the given maximum time is 
 The algorithm tries to found times as close as possible to the actual commit/author times.
 For longer words (i.e. 5 characters or more) it is likely that the default maximum time is not enough: setting `--max_minutes_in_future` is recommended.
 However, be careful with increasing the time: it might confuse other users of your repository or can lead to incorrectly sorted commits in logs.
+
+
+## For developers
+
+Instead of installing the package through `pip`, you can also run the script directly after checking out the repository as e.g.:
+```bash
+python3 -m src.hashbeaf.hashbeaf c0de
+```
 
 
 ## Feature wish list
