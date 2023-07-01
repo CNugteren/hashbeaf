@@ -1,4 +1,4 @@
-from src import utils
+from src.hashbeaf import utils
 
 
 def test_ishex() -> None:

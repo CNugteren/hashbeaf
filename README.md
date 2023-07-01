@@ -22,7 +22,7 @@ $ git commit -m "Updated code"
 But before you push, you think, meh, `b1c825b`, I can do better than that.
 Now it is time to run HashBeaf:
 ```bash
-$ python src/hashbeaf.py c0de
+$ python src/hashbeaf/hashbeaf.py c0de
 [main c0de2c4] Updated code
  Date: Mon Jun 26 20:43:07 2023 +0200
 (...)
@@ -34,11 +34,11 @@ And voila, we have `c0de2c4`, our HashBeaf'ed commit hash!
 
 Clone the repository, navigate to your own git repository, make a commit, and then run either:
 ```bash
-python /path/to/hashbeaf/src/hashbeaf.py
+python /path/to/hashbeaf/src/hashbeaf/hashbeaf.py
 ```
 to use a default list of nice 'words', or something like this for a custom 'word':
 ```bash
-python /path/to/hashbeaf/src/hashbeaf.py c0de
+python /path/to/hashbeaf/src/hashbeaf/hashbeaf.py c0de
 ```
 
 If you think it is too much work to run this after each commit, you can also install a git post-commit hook for your repository.
@@ -46,7 +46,7 @@ Modify `post-commit` to point to the right absolute path (and customize it furth
 On the next commit hashbeaf should run automatically.
 
 Need some inspiration?
-Check out the [default words list](src/words.py) for nice commit hashes, or see more on [Wikipedia here](https://en.wikipedia.org/wiki/Hexspeak) and [here](https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_debug_values).
+Check out the [default words list](src/hashbeaf/words.py) for nice commit hashes, or see more on [Wikipedia here](https://en.wikipedia.org/wiki/Hexspeak) and [here](https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_debug_values).
 
 
 ## Implementation details

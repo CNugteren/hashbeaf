@@ -2,4 +2,4 @@
 
 # Git post-commit hook to change the Git commit hash with HashBeaf"""
 
-python3 src/hashbeaf.py
+python3 -m src.hashbeaf.hashbeaf
