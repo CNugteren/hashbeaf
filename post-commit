@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Git post-commit hook to change the Git commit hash with HashBeaf"""
+
+python3 src/hashbeaf.py
