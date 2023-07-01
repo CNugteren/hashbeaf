@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "hashbeaf_CNugteren"
+name = "hashbeaf"
 version = "1.0.0"
 authors = [
   { name="Cedric Nugteren", email="web@cedricnugteren.nl" },
@@ -17,9 +17,13 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[project.scripts]
+hashbeaf = "hashbeaf.hashbeaf:cli_main"
+hb = "hashbeaf.hashbeaf:cli_main"
+
 [project.urls]
-"Homepage" = "https://github.com/pypa/hashbeaf"
-"Bug Tracker" = "https://github.com/pypa/hashbeaf/issues"
+"Homepage" = "https://github.com/cnugteren/hashbeaf"
+"Bug Tracker" = "https://github.com/cnugteren/hashbeaf/issues"
 
 [tool.black]
 line-length = 100
