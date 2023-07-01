@@ -37,7 +37,7 @@ Clone the repository, navigate to your own git repository, make a commit, and th
 python /path/to/hashbeaf/src/hashbeaf.py
 ```
 to use a default list of nice 'words', or something like this for a custom 'word':
-```
+```bash
 python /path/to/hashbeaf/src/hashbeaf.py c0de
 ```
 
