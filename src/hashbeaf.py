@@ -3,6 +3,7 @@ import logging
 from typing import List, Tuple
 
 import utils
+import words
 
 logger = logging.getLogger(__name__)
 
@@ -57,6 +58,6 @@ if __name__ == "__main__":
     logging.basicConfig()
     logging.getLogger().setLevel(logging.INFO)
     parser = argparse.ArgumentParser("Change the last commit to a commit hash with words you like")
-    parser.add_argument("words", type=str, nargs="+", default=("c0de", "beaf", "dead", "abba"))
+    parser.add_argument("words", type=str, nargs="?", default=words.WORDS)
     parser.add_argument("--max_minutes_in_future", type=int, default=15)
     hashbeaf_main(**vars(parser.parse_args()))
