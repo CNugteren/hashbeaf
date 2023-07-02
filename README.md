@@ -32,7 +32,11 @@ And voila, we have `c0de2c4`, our HashBeaf'ed commit hash!
 
 ## Want to try it yourself?
 
-Install it with `pip install hashbeaf`, navigate to your own git repository, make a commit, and then run either:
+Install it with:
+```bash
+pip install hashbeaf
+```
+Then navigate to your own git repository, make a commit, and then run either:
 ```bash
 hashbeaf
 ```
@@ -41,6 +45,7 @@ to use a default list of nice 'words', or something like this for a custom 'word
 hashbeaf c0de
 ```
 See `hashbeaf --help` for more information.
+There is also a `hb` alias if you don't want to type 8 characters.
 
 If you think it is too much work to run this after each commit, you can also install a git post-commit hook for your repository.
 Modify `post-commit` to point to the right absolute path (and customize it further as needed), and simple copy it to `your_repo/.git/hooks`.
@@ -55,6 +60,7 @@ Check out the [default words list](src/hashbeaf/words.py) for nice commit hashes
 The algorithm is inspired by [beautify_git_hash](https://github.com/vog/beautify_git_hash), a slightly outdated tool that achieves the same thing.
 
 HashBeaf is implemented in Python and requires version 3.7 or newer.
+It has been tested on Linux but might run on other operation systems.
 
 HashBeaf works as follows.
 A commit hash in git is computed based on the commit details, which include the commit message, author time and committer time.
@@ -82,7 +88,6 @@ python3 -m src.hashbeaf.hashbeaf c0de
 Missing a feature?
 Soon there will be also:
 
-1. A pypi version that you can install as `pip install hashbeaf`.
-2. More tests
-3. More documentation
-4. More error checking
+1. More tests
+2. More documentation
+3. More error checking
