@@ -24,6 +24,10 @@ def _commit_data_modify_increment(
     return modified_commit_data, author_time_full, commit_time_full
 
 
+def _get_commit_data_original() -> str:
+    return run_command("git cat-file commit HEAD")
+
+
 def hashbeaf_main(words: List[str], max_minutes_in_future: int) -> None:
     words = [word.lower() for word in words]
     for word in words:
@@ -32,7 +36,7 @@ def hashbeaf_main(words: List[str], max_minutes_in_future: int) -> None:
                 f"User input '{word}' contains non-hexadecimal characters, aborting."
             )
 
-    commit_data_original = run_command("git cat-file commit HEAD")
+    commit_data_original = _get_commit_data_original()
     for commit_increment in range(max_minutes_in_future * 60):
         for author_increment in range(commit_increment + 1):
             (commit_data, author_time_full, commit_time_full) = _commit_data_modify_increment(
