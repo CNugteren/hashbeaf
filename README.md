@@ -88,6 +88,5 @@ python3 -m src.hashbeaf.hashbeaf c0de
 Missing a feature?
 Soon there will be also:
 
-1. More tests
-2. More documentation
-3. More error checking
+1. More documentation
+2. More error checking

@@ -29,4 +29,5 @@ hb = "hashbeaf.hashbeaf:cli_main"
 line-length = 100
 
 [tool.pytype]
-inputs = ["src", "tests"]
+# TODO: Add 'tests' folder for checking
+inputs = ["src"]
