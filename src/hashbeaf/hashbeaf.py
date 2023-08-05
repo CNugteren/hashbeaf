@@ -11,6 +11,8 @@ logger = logging.getLogger(__name__)
 def _commit_data_modify_increment(
     commit_data: str, author_increment: int, commit_increment: int
 ) -> Tuple[str, str, str]:
+    if "author " not in commit_data or "committer " not in commit_data:
+        raise RuntimeError(f"Received unexpected commmit-data: {commit_data}")
     lines = commit_data.split("\n")
     author_data_split = lines[2].split(" ")
     commit_data_split = lines[3].split(" ")
