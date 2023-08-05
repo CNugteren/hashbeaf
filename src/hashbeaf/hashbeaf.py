@@ -23,7 +23,9 @@ def _commit_data_modify_increment(
     commit_time_full = f"{commit_timestamp} {commit_data_split[-1]}"
     author_line = " ".join([*author_data_split[:-2], author_time_full])
     commit_line = " ".join([*commit_data_split[:-2], commit_time_full])
-    modified_commit_data = "\n".join([*lines[:line_offset], author_line, commit_line, *lines[line_offset + 2:]])
+    modified_commit_data = "\n".join(
+        [*lines[:line_offset], author_line, commit_line, *lines[line_offset + 2 :]]
+    )
     return modified_commit_data, author_time_full, commit_time_full
 
 
