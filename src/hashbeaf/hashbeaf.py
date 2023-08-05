@@ -14,15 +14,16 @@ def _commit_data_modify_increment(
     if "author " not in commit_data or "committer " not in commit_data:
         raise RuntimeError(f"Received unexpected commmit-data: {commit_data}")
     lines = commit_data.split("\n")
-    author_data_split = lines[2].split(" ")
-    commit_data_split = lines[3].split(" ")
+    line_offset = [i for i, line in enumerate(lines) if line.startswith("author ")][0]
+    author_data_split = lines[line_offset].split(" ")
+    commit_data_split = lines[line_offset + 1].split(" ")
     author_timestamp = int(author_data_split[-2]) + author_increment
     commit_timestamp = int(commit_data_split[-2]) + commit_increment
     author_time_full = f"{author_timestamp} {author_data_split[-1]}"
     commit_time_full = f"{commit_timestamp} {commit_data_split[-1]}"
     author_line = " ".join([*author_data_split[:-2], author_time_full])
     commit_line = " ".join([*commit_data_split[:-2], commit_time_full])
-    modified_commit_data = "\n".join([lines[0], lines[1], author_line, commit_line, *lines[4:]])
+    modified_commit_data = "\n".join([*lines[:line_offset], author_line, commit_line, *lines[line_offset + 2:]])
     return modified_commit_data, author_time_full, commit_time_full
 
 
