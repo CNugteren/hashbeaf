@@ -67,7 +67,7 @@ def cli_main() -> None:
     logging.basicConfig()
     logging.getLogger().setLevel(logging.INFO)
     parser = argparse.ArgumentParser("Change the last commit to a commit hash with words you like")
-    parser.add_argument("words", type=str, nargs="?", default=WORDS)
+    parser.add_argument("words", type=str, nargs="*", default=WORDS)
     parser.add_argument("--max_minutes_in_future", type=int, default=15)
     hashbeaf_main(**vars(parser.parse_args()))
 
