@@ -1,4 +1,4 @@
 black==23.3.0
 flake8==5.0.*
 pytest==7.4.*
-pytype==2023.6.16
+pytype==2023.9.19
